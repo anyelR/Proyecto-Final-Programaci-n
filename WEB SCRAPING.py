@@ -109,15 +109,16 @@ if __name__ == "__main__":
     df = scrapear_poblacion()
 
     if not df.empty:
-        # Imprimimos los primeros 5 países REALES (No ceros)
+        # Imprimimos los primeros 5 países REALES 
         print("\n3. Muestra de datos obtenidos:")
         print(df.head())
 
-        # Verificamos que China o India no sean 0
+        # Verificamos China o India 
         if df.iloc[0]['Poblacion'] > 0:
             df.to_csv("poblacion.csv", index=False)
             print("\n ¡ÉXITO! ")
         else:
             print("\n error")
     else:
+
         print("No se obtuvieron datos.")
